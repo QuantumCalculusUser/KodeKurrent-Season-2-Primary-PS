@@ -1,0 +1,27 @@
+{
+  "name": "draftmate-ai-desktop",
+  "version": "1.0.0",
+  "description": "DraftMate AI local legal drafting desktop application",
+  "main": "electron/main.cjs",
+  "author": "DraftMate AI",
+  "license": "MIT",
+  "scripts": {
+    "start": "electron .",
+    "dist:win": "electron-builder --win nsis"
+  },
+  "devDependencies": {
+    "electron": "^34.3.0",
+    "electron-builder": "^26.0.12"
+  },
+  "build": {
+    "appId": "com.draftmate.ai",
+    "productName": "DraftMate AI",
+    "directories": { "output": "release" },
+    "files": ["electron/**/*", "package.json"],
+    "extraResources": [
+      { "from": "backend-dist/draftmate-api.exe", "to": "backend/draftmate-api.exe" }
+    ],
+    "win": { "target": [{ "target": "nsis", "arch": ["x64"] }], "artifactName": "DraftMate-AI-Setup-${version}.${ext}" },
+    "nsis": { "oneClick": false, "allowToChangeInstallationDirectory": true, "createDesktopShortcut": true, "createStartMenuShortcut": true }
+  }
+}
