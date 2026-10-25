@@ -1,0 +1,62 @@
+---
+metadata:
+  title: Indian Legal Notice Interview (DraftMate adaptation)
+  short title: Legal Notice
+  authors:
+    - DraftMate contributors
+  description: Guided collection of facts for an Indian legal-notice draft. Requires advocate review.
+  revision_date: 2026-10-25
+---
+mandatory: True
+question: |
+  Indian legal notice interview
+subquestion: |
+  Gather verified facts before drafting. This interview does not determine legal validity or calculate statutory deadlines.
+fields:
+  - Notice type: notice_type
+    datatype: radio
+    choices:
+      - Payment demand
+      - Breach of agreement
+      - Landlord / tenancy
+      - Consumer complaint
+      - Employment matter
+      - Cheque dishonour (Section 138 NI Act - verify applicability)
+      - General legal notice
+  - Client / sender full legal name: client_name
+  - Recipient full legal name: recipient_name
+  - Recipient full address: recipient_address
+    datatype: area
+  - Chronology of material facts: facts
+    datatype: area
+  - Action or relief demanded: demand
+    datatype: area
+  - Amount and currency, if any: amount
+    required: False
+  - Legal provisions / contract clauses, if known: legal_basis
+    datatype: area
+    required: False
+  - Supporting documents / evidence: evidence
+    datatype: area
+    required: False
+  - Requested response deadline (confirm with advocate): deadline
+    required: False
+  - Intended delivery method: delivery_method
+    choices:
+      - Speed Post
+      - Registered Post A.D.
+      - Courier
+      - Email
+      - Hand delivery
+      - Other / to be confirmed
+  - Notice date (DD-MM-YYYY): notice_date
+  - Advocate name, if applicable: advocate_name
+    required: False
+  - Advocate office address, if applicable: advocate_address
+    datatype: area
+    required: False
+---
+mandatory: True
+question: Review before drafting
+subquestion: |
+  Verify party names, addresses, chronology, amounts, limitation, jurisdiction, service rules and any statutory notice period with a qualified Indian advocate. Never dispatch a draft containing unresolved placeholders.
