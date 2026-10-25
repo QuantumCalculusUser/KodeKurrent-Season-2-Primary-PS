@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: draftmate-ai
+    runtime: docker
+    plan: free
+    healthCheckPath: /api/health
+    envVars:
+      - key: GEMINI_API_KEY
+        sync: false
+      - key: GEMINI_MODEL
+        value: gemini-3.8-flash
+      - key: DATABASE_PATH
+        value: /tmp/draftmate.db
+      - key: DRAFTMATE_STATIC_DIR
+        value: /app/static
